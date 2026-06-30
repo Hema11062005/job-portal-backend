@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const http = require("http");
 const { Server } = require("socket.io");
 
-const Job = require("./modules/Job");
+const Job = require("./modules/job");
 const Application = require("./modules/Application");
 const Notification = require("./modules/Notification");
 
