@@ -14,7 +14,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:3000",
-    "https://job-portal-three-phi-71.vercel.app/"
+    "https://job-portal-mm98-git-main-hemalathar11062005-6247s-projects.vercel.app"
   ],
   methods: ["GET", "POST"],
   credentials: true
@@ -31,7 +31,10 @@ const server = http.createServer(app);
 // Socket setup
 const io = new Server(server, {
   cors: {
-    origin: "https://job-portal-three-phi-71.vercel.app/",
+    origin: [
+      "http://localhost:3000",
+      "https://job-portal-mm98-git-main-hemalathar11062005-6247s-projects.vercel.app"
+    ],
     methods: ["GET", "POST"]
   }
 });
