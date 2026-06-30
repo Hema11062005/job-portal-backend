@@ -11,7 +11,14 @@ const Notification = require("./modules/Notification");
 require("dotenv").config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:3000",
+    "https://job-portal-three-phi-71.vercel.app/"
+  ],
+  methods: ["GET", "POST"],
+  credentials: true
+}));
 app.use(express.json());
 
 // MongoDB Connection
@@ -24,7 +31,8 @@ const server = http.createServer(app);
 // Socket setup
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000"
+    origin: "https://job-portal-three-phi-71.vercel.app/",
+    methods: ["GET", "POST"]
   }
 });
 
